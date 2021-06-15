@@ -33,11 +33,21 @@ This section is not exhaustive, so please read these articles ([a](https://doi.o
 The global-level specification of an *aggregate program* (i.e. a program that use Aggregate Programming) has to break up and then executes in each device.
 Locally, a single program evaluation is called *round*. It is executed asynchronously and proactively. At the end of each round, nodes produce a data structure called *export* and share it to its neighbourhood. It contains all the information necessary to make neighbourhood progress in the collective computation (sensor sensing, local program output, etc.).
 To summarise, the steps that each node *have to* compute to participate in the collective behaviour are:
-1.
+1. produce a context: it contains the sensors perception and the exports gather from the neighbourhood;
+2. evaluate the aggregate program according to the current context and producing an *export*
+3. make actuation according to the export computed
+4. share the export to the neighbourhood
 
 The model does not impose:
 - how nodes find their neighbourhood: we suppose this relation exists. It could be based on spatial constraints (e.g. all nodes far from ten meters), network constraints (e.g. all nodes connected with me via Bluetooth) or arbitrarily logical constraints.
-- how the communication between node happens: we suppose that, when a node wake up and compute the next export, the neighbour's exports are collected in some way (direct communication, via MOM, via a cloud service, ...)
+- node evaluation frequency (even if some works considering time exists)
+- how the communication between node happens: we suppose that, when a node wakes up and compute the next export, the neighbour's exports are collected in some way (direct communication, via MOM, via a cloud service, ...)
+
+# FScaFi main operators
+[FScaFi](https://doi.org/10.1007/978-3-030-61470-6\_21) is a variant of field calculus in which the neighbour field is not directly encoded. Indeed, the interaction with the neighbourhood happens only with foldhood operations. It is worth noting that in this model is possible to use *built-in* functions. It makes it possible to reuse libraries, sensor queries, relational sensors (i.e. sensors that depends on neighbour values), and so on. 
+
+The essential constructs of the calculus are:
+
 
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
