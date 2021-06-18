@@ -48,6 +48,12 @@ The model does not impose:
 
 The essential constructs of the calculus are:
 
+> **Time evolution**: rep(e1){e2} is a construct for dynamically changing
+fields through the ``repeated" application of the functional expression e2. At the first computation round (or, more precisely, when no previous state is available—e.g., initially or at re-entrance after state was cleared out due to branching), e2 is applied to e1, then
+at each other step it is applied to the value obtained at the previous step.
+
+> **Neighbourhood interaction**: foldhood(e1)(e2){e3} and nbr{e} model device-to-device interaction. The foldhood construct evaluates expression e3 against every aligned neighbour (including the device itself), then aggregates the values collected through e2 together with the initial value e1. The nbr construct tags expressions e signalling that (when evaluated against a
+neighbour) the value of e has to be gathered from neighbours (and not directly evaluated). Such behaviour is implemented via a conceptual broadcast of the values evaluated for e.
 
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
