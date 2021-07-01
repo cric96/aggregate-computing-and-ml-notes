@@ -77,7 +77,7 @@ For each node and arch, a set of features defines some application-level charact
 
 Aggregate computing, from the computation point of view, is device-centric. Namely, the collective computation is broken into rounds that will be executed in each device).
 
-Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_n}" title="{\color{Teal} f_n}"/> is a feature vector that describes a local device (e.g. temperature, ....) and  <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_{ne}}"> is a feature vector that describes some relation between nodes (e.g. distance). Similar to GNN, we can immagine that each node has also a *state*, namely something that is build upon the local and neighbuors feature.
+Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_n}" title="{\color{Teal} f_n}"/> is a feature vector that describes a local device (e.g. temperature, ....) and  <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_{ne}}"> is a feature vector that describes some relation between nodes (e.g. distance). It is in some sense the enviroment. Similar to GNN, we can immagine that each node has also a *state*, namely something that is build upon the local and neighbuors feature.
 
 <div align="center">
 <img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;x_n(t)&space;\subseteq&space;\mathbb{R}^s" title="{\color{Teal} x_n(t) \subseteq \mathbb{R}^s" />
@@ -87,6 +87,14 @@ Finally, the output at some time t is influeced by the state and the feature:
 
 <div align="center">
 <img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;o_n(t)&space;=&space;\psi&space;(f_n(t),&space;x_n(t))&space;}" title="{\color{Teal} o_n(t) = \psi (f_n(t), x_n(t)) }" />
+</div>
+
+So, how we can compute  <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}x_n(t)}"> ? We can compute it iterativly:
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;x_n(t&space;&plus;&space;1)&space;=&space;\vartheta_{e&space;\in&space;Neigh(n)}(x_n(t&space;-&space;1),&space;f_n(t&space;-&space;1),&space;f_{ne}(t&space;-&space;1),&space;x_e(t&space;-&space;1),&space;f_e(t&space;-&space;1)))" title="{\color{Teal} x_n(t + 1) = \vartheta_{e \in Neigh(n)}(x_n(t - 1), f_n(t - 1), f_{ne}(t - 1), x_e(t - 1), f_e(t - 1)))" />
+
+Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}\vartheta}"> is an aggregation policy computed against the neighoorhood.
 </div>
 
 # Possible conflicts
