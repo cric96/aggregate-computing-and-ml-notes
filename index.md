@@ -55,6 +55,15 @@ at each other step it is applied to the value obtained at the previous step.
 > **Neighbourhood interaction**: foldhood(e1)(e2){e3} and nbr{e} model device-to-device interaction. The foldhood construct evaluates expression e3 against every aligned neighbour (including the device itself), then aggregates the values collected through e2 together with the initial value e1. The nbr construct tags expressions e signalling that (when evaluated against a
 neighbour) the value of e has to be gathered from neighbours (and not directly evaluated). Such behaviour is implemented via a conceptual broadcast of the values evaluated for e.
 
+# A Machine Learning model, a draft
+Inspired from Graph Neural Network works, I tried to model a neural network(s) that can be used together with Aggregate Computing.
+In this preliminary work, the collective system is a static graph:
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;G(N,&space;E)}" title="{\color{Teal} G(N, E)}" />
+</div>
+
+In which <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" title="{\color{Teal} N}"/> is the set of all system nodes and <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" title="{\color{Teal} E}"/> is the set containing the neighbour's relation between nodes.
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
 
