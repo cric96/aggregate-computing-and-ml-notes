@@ -69,6 +69,26 @@ In which <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" 
 <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}E&space;=&space;\{&space;(n,&space;e)&space;:&space;n,&space;e&space;\in&space;N&space;\}}" title="E = \{ (n, e) : n, e \in N \}" />
 </div>
 
+For each node and arch, a set of features defines some application-level characteristics time-dependent:
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.image?\newline{\color{Teal}&space;Neigh(n)&space;=&space;{e&space;\in&space;N,&space;(n,&space;e)&space;\in&space;E}}\newline{\color{Teal}&space;f_n(t)&space;\subseteq&space;\mathbb{R}^l&space;&space;}\newline{\color{Teal}&space;f_{ne}(t)&space;\subseteq&space;\mathbb{R}^{k},&space;(n)&space;\in&space;N,&space;e&space;\in&space;Neigh(n)}\newline" title="\newline{\color{Teal} Neigh(n) = {e \in N, (n, e) \in E}}\newline{\color{Teal} f_n(t) \subseteq \mathbb{R}^l }\newline{\color{Teal} f_{ne}(t) \subseteq \mathbb{R}^{k}, (n) \in N, e \in Neigh(n)}\newline" />
+</div>
+
+Aggregate computing, from the computation point of view, is device-centric. Namely, the collective computation is broken into rounds that will be executed in each device).
+
+Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_n}" title="{\color{Teal} f_n}"/> is a feature vector that describes a local device (e.g. temperature, ....) and  <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}f_{ne}}"> is a feature vector that describes some relation between nodes (e.g. distance). Similar to GNN, we can immagine that each node has also a *state*, namely something that is build upon the local and neighbuors feature.
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;x_n(t)&space;\subseteq&space;\mathbb{R}^s" title="{\color{Teal} x_n(t) \subseteq \mathbb{R}^s" />
+</div>
+
+Finally, the output at some time t is influeced by the state and the feature:
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;o_n(t)&space;=&space;\psi&space;(f_n(t),&space;x_n(t))&space;}" title="{\color{Teal} o_n(t) = \psi (f_n(t), x_n(t)) }" />
+</div>
+
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
 
