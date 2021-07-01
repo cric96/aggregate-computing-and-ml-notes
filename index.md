@@ -63,7 +63,12 @@ In this preliminary work, the collective system is a static graph:
 <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;G(N,&space;E)}" title="{\color{Teal} G(N, E)}" />
 </div>
 
-In which <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" title="{\color{Teal} N}"/> is the set of all system nodes and <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" title="{\color{Teal} E}"/> is the set containing the neighbour's relation between nodes.
+In which <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;N}" title="{\color{Teal} N}"/> is the set of all system nodes and <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}&space;E}" title="{\color{Teal} E}"/> is the set containing the neighbour's relation between nodes.
+
+<div align="center">
+<img src="https://latex.codecogs.com/svg.latex?{\color{Teal}E&space;=&space;\{&space;(n,&space;e)&space;:&space;n,&space;e&space;\in&space;N&space;\}}" title="E = \{ (n, e) : n, e \in N \}" />
+</div>
+
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
 
