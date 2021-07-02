@@ -94,8 +94,9 @@ So, how we can compute  <img src="https://latex.codecogs.com/svg.latex?{\color{T
 <div align="center">
 <img src="https://latex.codecogs.com/svg.image?{\color{Teal}&space;x_n(t&space;&plus;&space;1)&space;=&space;\vartheta_{e&space;\in&space;Neigh(n)}(x_n(t&space;-&space;1),&space;f_n(t&space;-&space;1),&space;f_{ne}(t&space;-&space;1),&space;x_e(t&space;-&space;1),&space;f_e(t&space;-&space;1)))" title="{\color{Teal} x_n(t + 1) = \vartheta_{e \in Neigh(n)}(x_n(t - 1), f_n(t - 1), f_{ne}(t - 1), x_e(t - 1), f_e(t - 1)))" />
 
-Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}\vartheta}"> is an aggregation policy computed against the neighoorhood.
 </div>
+Where <img src="https://latex.codecogs.com/svg.latex?{\color{Teal}\vartheta}"> is an aggregation policy computed against the neighoorhood.
+
 
 # Possible conflicts
 - Aggregate computing born to handle self-organisation by a global specification of the system behaviour. So we have a declarative specification of the system, knowing why nodes behave in some way. With standard Machine Learning, we miss this link, so we carefully pay attention to this point.
